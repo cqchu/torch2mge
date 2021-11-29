@@ -43,6 +43,8 @@ class ModuleConverter:
                     continue
                 if tk is None:
                     continue
+            if tk == "compute_mode" or tk == "param_dim":
+                continue
             assert hasattr(
                 self.torch_module, tk
             ), f"{self.torch_module} has no attr `{tk}'"
